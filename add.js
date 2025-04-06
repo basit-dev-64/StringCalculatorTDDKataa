@@ -10,9 +10,13 @@ function add(numbers) {
   }
 
   const parts = numbers.split(delimiter);
+  const negatives = parts.filter(num => parseInt(num) < 0);
+
+  if (negatives.length > 0) {
+    throw new Error(`negative numbers not allowed: ${negatives.join(",")}`);
+  }
+
   return parts.reduce((sum, num) => sum + parseInt(num), 0);
 }
+
 module.exports = {add};
-
-
-

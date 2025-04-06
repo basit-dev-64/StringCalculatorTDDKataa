@@ -24,3 +24,21 @@ console.log("✅ Test 5 passed");
 // Test 6
 assert.strictEqual(add("//;\n1;2"), 3);
 console.log("✅ Test 6 passed");
+
+// Test 7: Negative number throws error
+try {
+    add("1,-2,3");
+    console.error("❌ Test 7 failed: no error thrown");
+  } catch (e) {
+    assert.strictEqual(e.message, "negative numbers not allowed: -2");
+    console.log("✅ Test 7 passed");
+  }
+  
+  // Test 8: Multiple negatives
+  try {
+    add("1,-2,-5,4");
+    console.error("❌ Test 8 failed: no error thrown");
+  } catch (e) {
+    assert.strictEqual(e.message, "negative numbers not allowed: -2,-5");
+    console.log("✅ Test 8 passed");
+  }
