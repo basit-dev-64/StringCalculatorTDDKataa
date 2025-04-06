@@ -20,3 +20,7 @@ console.log("✅ Test 4 passed");
 // Test 5
 assert.strictEqual(add("1\n2,3"), 6);
 console.log("✅ Test 5 passed");
+
+// Test 6
+assert.strictEqual(add("//;\n1;2"), 3);
+console.log("✅ Test 6 passed");
